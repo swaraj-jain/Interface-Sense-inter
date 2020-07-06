@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    <title>Member Profile</title>
+  </head>
+  <body>
+    <!-- Put everthing in a container to center it -->
+    <div class="container mt-3" id="app">
+
+      <!-- Back button and Heading -->
+      <nav id="Nav">
+        <a href="#">
+          <span class="material-icons text-dark" id="backIcon">arrow_back_ios</span>
+        </a>
+        <p class="text-uppercase text-center font-weight-bold">Member Profile</p>
+      </nav>
+
+      <!-- Profile pic, Name and Organisation -->
+      <div class="d-flex flex-column align-items-center">
+        <img class="mb-1" src="https://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="profile-image" id="profile-image">
+        <span class="font-weight-bold">{{ fullName }}</span>
+        <span class="text-muted small">{{ firmName }}</span>
+      </div>
+
+      <!-- Member main details -->
+      <div class="d-flex border-bottom justify-content-around pb-3 mb-3" id="memberLottiePoints">
+        <div class="d-flex flex-column align-items-center points">
+          <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_nqlp2k.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;" autoplay></lottie-player>
+          <span class="font-weight-bold">{{ points }}</span>
+          <span class="text-muted small">Points</span>
+        </div>
+        <div class="d-flex flex-column align-items-center points">
+          <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_9sXk9i.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;" autoplay></lottie-player>
+          <span class="font-weight-bold">&#8377;{{ business }}L</span>
+          <span class="text-muted small">Business</span>
+        </div>
+        <div class="d-flex flex-column align-items-center points">
+          <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_JLnT1f.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;" autoplay></lottie-player>
+          <span class="font-weight-bold">{{ references }}</span>
+          <span class="text-muted small">References</span>
+        </div>
+      </div>
+
+      <!-- Member Full Details -->
+      <p class="text-center" v-if="!dataReceived">Loading...</p>
+      <div id="memberFullDetails" v-else>
+        <div v-for="detail in sortedData">
+          <p class="mb-0 bold">{{ detail[0] }}</p>
+          <p class="text-muted mb-2">{{ detail[1] || "Not available"}}</p>
+        </div> 
+      </div>
+    </div>    
+
+    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="member-view.js"></script>
+  </body>
+</html>

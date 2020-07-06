@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="edit.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+ 
+    <div  id="app">
+
+            <p class="back"> < <span id="ep" >Edit Profile</span></p>
+            <p style="margin-bottom: 2px; font-weight: 300; font-size: 14px; font-family: 'Montserrat', sans-serif;">Personal Details</p><hr style="margin-top:0px; margin-bottom:4px; border-top: 1px solid #d3d3d3;">
+            <div class="form-group" style="margin-bottom: 3px;">
+                <label for="fn" class="fl">First Name<span style="color: red; font-size: 14px;">*</span> </label> 
+                <input type="text" class="form-control mfh" id="fn" v-model="firstName" style="height: 32px; border: 1px solid #eee; color: rgb(62,115,200); font-family: 'Work Sans', sans-serif;">
+            </div>
+            <div class="form-group" style="margin-bottom: 3px;">
+                <label for="ln" class="fl">Last Name<span style="color: red; font-size: 14px;">*</span> </label> 
+                <input  type="text" class="form-control mfh" id="ln" v-model="lastName" style="height: 32px; border: 1px solid #eee; color: rgb(62,115,200); font-family: 'Work Sans', sans-serif;">
+            </div>
+            <div class="form-group" style="margin-bottom: 3px;">
+                <label for="nu" class="fl">Phone No<span style="color: red; font-size: 14px;">*</span>  </label> 
+                <input type="text" class="form-control mfh" id="nu" v-model="number" style="height: 32px; border: 1px solid #eee; color: rgb(62,115,200); font-family: 'Work Sans', sans-serif;">
+            </div>
+            <div class="form-group" style="margin-bottom: 3px;">
+                <label for="em" class="fl">E-Mail<span style="color: red; font-size: 14px;">*</span>  </label> 
+                <input type="email" class="form-control" id="mfh" id="em" v-model="email" style="height: 32px; border: 1px solid #eee; color: rgb(62,115,200); font-family: 'Work Sans', sans-serif;">
+            </div>
+            <p style="margin-bottom: 2px; font-weight: 300; font-size: 14px; margin-top: 15px; font-family: 'Montserrat', sans-serif;">Personal Adress</p><hr style="margin-top:0px; margin-bottom:4px; border-top: 1px solid #d3d3d3; color: rgb(62,115,200);">
+            <div class="form-group" style="margin-bottom: 3px;">
+                <label for="ad" class="fl">Adress</label> 
+                <input type="text" class="form-control mfh" id="ad" v-model="adress" style="height: 32px; border: 1px solid #eee; color: rgb(62,115,200); font-family: 'Work Sans', sans-serif;">
+            </div>
+            <p style="margin-bottom: 2px; font-weight: 300; font-size: 14px; margin-top: 15px; font-family: 'Montserrat', sans-serif;">Work  Details</p><hr style="margin-top:0px; margin-bottom:4px; border-top: 1px solid #d3d3d3; color: rgb(62,115,200);">
+            <div class="form-group" style="margin-bottom: 3px;">
+                <label for="fnf" class="fl">Firm Name</label> 
+                <input  type="text" class="form-control nfh" id="fnf" v-model="fname" style="height: 32px; border: 1px solid #eee; color: rgb(62,115,200); font-family: 'Work Sans', sans-serif;">
+            </div>
+            <div class="form-group" style="margin-bottom: 3px;">
+                <label for="fanf" class="fl">Firm Adress</label> 
+                <input  type="text" class="form-control mfh" id="fanf" v-model="fadress" style="height: 32px; border: 1px solid #eee; color: rgb(62,115,200); font-family: 'Work Sans', sans-serif;">
+            </div>
+            <button type="submit" @click="updateUser" class="btn btn-primary btn-lg btn-block" style="padding: 5px 16px; font-size: 16px; margin-top: 25px; background: rgb(64,75,194); font-family: 'Montserrat', sans-serif;">Save Changes</button>
+            
+    <!-- <p>Data Received: {{ users[i - 1] }}</p> -->
+    </div>
+  
+
+    <script>
+      new Vue({
+        el: " #app",
+        data: {
+          firstName: "...",
+          lastName: "...",
+          number: "...",
+          email: "...",
+          adress:"...",
+          fname:"...",
+          fadress:"...",
+          users: [],
+          i: 0
+        },
+        methods: {
+          getData() {
+            fetch("http://164.52.195.248:8062/members")
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error("Network response was not ok");
+                }
+                return response.json();
+              })
+              .then(data => {
+                this.users = data;
+                this.anotherUser(this.i);
+              })
+              .catch(error => {
+                console.error(
+                  "There has been a problem with your fetch operation:",
+                  error
+                );
+              });
+          },
+          anotherUser() {
+            this.firstName = this.users[this.i].firstName;
+            this.lastName = this.users[this.i].lastName;
+            this.email= this.users[this.i].emailId;
+            this.number = this.users[this.i].mobileNo;
+            this.adress = this.users[this.i].businessAddressLine2;
+            this.fadress = this.users[this.i].businessAddressLine1;
+            this.fname = this.users[this.i].firmName;
+            this.i++;
+          },
+          updateUser() {
+            const userData = this.users[this.i - 1];
+            userData.firstName = this.firstName;
+            userData.lastName = this.lastName;
+            userData.email = this.email;
+            userData.mobileNo = this.number;
+            userData.businessAddressLine2 = this.adress;
+            userData.businessAddressLine1 = this.fadress;
+            userData.firmName = this.fname;
+            //console.log(userData.fadress);
+
+            fetch('http://164.52.195.248:8062/members', {
+              method: 'PUT', // or 'PUT'
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(userData),
+            })
+            .then(response => response.json())
+            .then(data => {
+              console.log('Success:', data);
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+            });
+          }
+        },
+        mounted: function() {
+          this.getData();
+        }
+      });
+    </script>
+  </body>
+</html>

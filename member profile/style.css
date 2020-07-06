@@ -1,0 +1,20 @@
+nav {
+  position: relative;
+}
+
+nav a {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#profile-image {
+  width: 90px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 12px #aaa;
+  border: 3px solid white;
+}
+
+.bold {
+  font-weight: 500;
+}

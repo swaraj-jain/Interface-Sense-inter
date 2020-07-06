@@ -1,0 +1,28 @@
+#app{
+    padding: 15%;
+    padding-top: 8%;
+    
+}
+.mfh{
+    height: 29px;
+}
+.fl{
+    font-size: 12px;
+    font-weight: 100;
+    margin-bottom: 1px;
+    padding-left: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+#ep{
+    text-align: center; 
+    color:rgb(62,115,200);
+    font-size: 14px;
+    margin-bottom:15px;
+    margin-left: 30%;
+    font-family: 'Montserrat', sans-serif;
+}
+.back{
+    font-weight: 900;
+    color: rgb(62,115,200);
+    font-size: 16px;
+}
