@@ -4638,7 +4638,7 @@ figcaption {
 }
 
 .c-imageblock-link.img2 {
-  background-image: url('https://via.placeholder.com/1000x600.png?text=IMAGE');
+  background-image: url('../images1/with-phone.jpg');
   background-position: 50% 40%;
   background-size: cover;
   background-repeat: no-repeat;
