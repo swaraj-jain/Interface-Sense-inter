@@ -330,6 +330,22 @@ figcaption {
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
+  padding-left: 19%;
+}
+@media(max-width:1300px){
+  .container.container-nested {
+    padding-left: 7%;
+  }
+}
+@media(max-width:1200px){
+  .container.container-nested {
+    padding-left: 6%;
+  }
+}
+@media(max-width:1000px){
+  .container.container-nested {
+    padding-left: 6%;
+  }
 }
 
 .container.container-nested.is-wrapped {
