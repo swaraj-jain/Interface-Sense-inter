@@ -14,6 +14,12 @@
 /*
 > 1. Forms
 */
+a:hover{
+  text-decoration: none;
+}
+.form-group{
+  margin-bottom: 9px;
+}
 
 
 .w-form-formradioinput--inputType-custom {
@@ -248,8 +254,17 @@ blockquote {
 }
 @media(max-width:1200px){
   #thisimg{
-    padding:auto;
-    
+   margin-left: 31%;
+  }
+}
+@media(max-width:800px){
+  #thisimg{
+   margin-left: 25%;
+  }
+}
+@media(max-width:600px){
+  #thisimg{
+   margin-left: 22%;
   }
 }
 
@@ -1015,6 +1030,8 @@ figcaption {
   bottom: auto;
   display: none;
   width: 100%;
+  
+  color: white;
 }
 
 /*
@@ -4656,6 +4673,11 @@ figcaption {
   background-size: cover;
   background-repeat: no-repeat;
 }
+@media(.max-width:700px){
+  .c-imageblock-link.img2{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP8AAADGCAMAAAAqo6adAAAACVBMVEX///9/rff///yOlBTYAAABgUlEQVR4nO3PMQEAMAyAsG7+RVdGjhIFMO/Paf3rAqt/XWD1rwus/nWB1b8usPrXBVb/usDqXxdY/esCq39dYPWvC6z+dYHVvy6w+tcFVv+6wOpfF1j96wKrf11g9a8LrP51gdW/LrD61wVW/7rA6l8XWP3rAqt/XWD1rwus/nWB1b8usPrXBVb/usDqXxdY/esCq39dYPWvC6z+dYHVvy6w+tcFVv+6wOpfF1j96wKrf11g9a8LrP51gdW/LrD61wVW/7rA6l8XWP3rAqt/XWD1rwus/nWB1b8usPrXBVb/usDqXxdY/esCq39dYPWvC6z+dYHVvy6w+tcFVv+6wOpfF1j96wKrf11g9a8LrP51gdW/LrD61wVW/7rA6l8XWP3rAqt/XWD1rwus/nWB1b8usPrXBVb/usDqXxdY/esCq39dYPWvC6z+dYHVvy6w+tcFVv+6wOpfF1j96wKrf11g9a8LrP51gdW/LrD61wVW/7rA6l8XWP3rAqt/XWAd/1+uqwJT58ldTAAAAABJRU5ErkJggg==');
+  }
+}
 
 .c-imageblock-link__text {
   color: #fff;
@@ -4774,11 +4796,18 @@ figcaption {
   border-color: #e0e0e0;
   border-radius: 3px;
   background-color: #fff;
-  width: 110%;
+  width: 130%;
+  margin-right:10%;
 }
-@media(max-width-1200px){
+@media(max-width:990px){
   .c-financial-finder{
-    width: 90%;
+    width: 100%;
+  }
+}
+
+@media(max-width:990px){
+  .c-financial-finder{
+    width: 100%;
   }
 }
 #field{
@@ -4793,9 +4822,6 @@ figcaption {
     font-size: 12px;
     padding-right: 10px;
     padding-left: 4px;
-  }
-  .c-financial-finder{
-    width: 100%;
   }
 }
 
@@ -5784,13 +5810,7 @@ figcaption {
     padding-top: 96px;
     padding-bottom: 96px;
   }
-  .c-imageblock-link.img2 {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 100%, 0.78)), to(hsla(0, 0%, 100%, 0.78))), url('https://via.placeholder.com/1000x600.png?text=IMAGE');
-    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0.78), hsla(0, 0%, 100%, 0.78)), url('https://via.placeholder.com/1000x600.png?text=IMAGE');
-    background-position: 0px 0px, 50% 40%;
-    background-size: auto, cover;
-    background-repeat: repeat, no-repeat;
-  }
+  
   .navigation-menu {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
