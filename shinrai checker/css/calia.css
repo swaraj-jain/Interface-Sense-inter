@@ -14,6 +14,12 @@
 /*
 > 1. Forms
 */
+a:hover{
+  text-decoration: none;
+}
+.form-group{
+  margin-bottom: 9px;
+}
 
 
 .w-form-formradioinput--inputType-custom {
@@ -248,8 +254,17 @@ blockquote {
 }
 @media(max-width:1200px){
   #thisimg{
-    padding:auto;
-    
+   margin-left: 31%;
+  }
+}
+@media(max-width:800px){
+  #thisimg{
+   margin-left: 25%;
+  }
+}
+@media(max-width:600px){
+  #thisimg{
+   margin-left: 22%;
   }
 }
 
@@ -1015,6 +1030,8 @@ figcaption {
   bottom: auto;
   display: none;
   width: 100%;
+  
+  color: white;
 }
 
 /*
@@ -4774,11 +4791,18 @@ figcaption {
   border-color: #e0e0e0;
   border-radius: 3px;
   background-color: #fff;
-  width: 110%;
+  width: 130%;
+  margin-right:10%;
 }
-@media(max-width-1200px){
+@media(max-width:990px){
   .c-financial-finder{
-    width: 90%;
+    width: 100%;
+  }
+}
+
+@media(max-width:990px){
+  .c-financial-finder{
+    width: 100%;
   }
 }
 #field{
@@ -4793,9 +4817,6 @@ figcaption {
     font-size: 12px;
     padding-right: 10px;
     padding-left: 4px;
-  }
-  .c-financial-finder{
-    width: 100%;
   }
 }
 
