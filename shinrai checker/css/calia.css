@@ -242,6 +242,16 @@ blockquote {
   font-size: 18px;
   line-height: 22px;
 }
+#thisimg{
+  margin-left: 30%;
+  margin-top: 189px;
+}
+@media(max-width:1200px){
+  #thisimg{
+    padding:auto;
+    
+  }
+}
 
 figure {
   margin-bottom: 10px;
@@ -1560,6 +1570,7 @@ figcaption {
   margin-right: auto;
   margin-left: auto;
 }
+
 
 .block-centered.img {
   overflow: hidden;
@@ -4763,6 +4774,29 @@ figcaption {
   border-color: #e0e0e0;
   border-radius: 3px;
   background-color: #fff;
+  width: 110%;
+}
+@media(max-width-1200px){
+  .c-financial-finder{
+    width: 90%;
+  }
+}
+#field{
+  width: 110%;
+  font-size: 12px;
+  padding-right: 10px;
+  padding-left: 4px;
+}
+@media(max-width:1200px){
+  #field{
+    width: 100%;
+    font-size: 12px;
+    padding-right: 10px;
+    padding-left: 4px;
+  }
+  .c-financial-finder{
+    width: 100%;
+  }
 }
 
 .hero-image-2 {
